@@ -1,0 +1,22 @@
+{
+  "name": "juneproject",
+  "version": "1.0.0",
+  "description": "Cypress June Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaichBlay/juneProject.git"
+  },
+  "author": "Sam Blay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaichBlay/juneProject/issues"
+  },
+  "homepage": "https://github.com/PaichBlay/juneProject#readme",
+  "devDependencies": {
+    "cypress": "^13.11.0"
+  }
+}

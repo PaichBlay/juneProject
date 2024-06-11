@@ -1,0 +1,11 @@
+# Node.js files
+node_modules/
+.vscode/
+.ideal/
+.DS_Store
+cypress/videos
+cypress/screenshots
+cypress/reports/
+cypress.env.json
+dist/
+
