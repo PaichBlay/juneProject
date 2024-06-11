@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/PaichBlay/juneProject#readme",
   "devDependencies": {
-    "cypress": "^13.11.0"
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.11.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-fill-command": "^1.0.2",
+    "cypress-mailslurp": "^1.10.0"
   }
 }

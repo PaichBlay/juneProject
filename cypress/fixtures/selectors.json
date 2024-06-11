@@ -1,0 +1,27 @@
+{
+  "homepage":
+  {
+    "homePageSignupButton": ".Header2_header__nav__btn__wRKfY div:nth-child(2) button"
+  },
+
+  "personaDetails": {
+  "fullNameField": "input#fullname",
+  "businessNameField": "input#businessname",
+  "businessNameEmail": "input#businessemail",
+  "phoneField": "input#businessphonenumber",
+  "businessRegField": "input#businessRegNum",
+  "nextButton": ".Login_rightside__nhkW7 div:nth-child(6) button"
+  },
+
+  "socialDetails":{
+    "websiteField":"input#website",
+    "instagramHandleField":"input#instagramHandle",
+    "twitterHandleField":"input#twitterHandle",
+    "howYouHeardCombo":".iafYdr.sc-cPiKLX",
+    "howYouHeardSearch":"#scrollableDiv input[placeholder='Search list']",
+    "howYouHeardSelected":".MimaDropdown_select__options__xLi7K",
+    "passwordField":"input#password",
+    "signupPageButton":".Login_rightside__nhkW7 button[type='submit']"
+  }
+
+}
