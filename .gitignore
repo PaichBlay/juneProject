@@ -8,4 +8,5 @@ cypress/screenshots
 cypress/reports/
 cypress.env.json
 dist/
+.gitignore
 
