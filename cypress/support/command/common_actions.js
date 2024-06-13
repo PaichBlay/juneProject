@@ -5,13 +5,17 @@ let personal
 let social
 let otpPage
 let inboxId
+let login
+let dashboardPage
 
 before('load all element locators', ()=>{
     cy.fixture('selectors').then((ele)=>{
         home = ele.homePage
+        login = ele.loginDetails
         personal = ele.personalDetails
         social = ele.socialDetails
         otpPage = ele.otpPage
+        dashboardPage = ele.dashboardDetails
     })
 })
 
@@ -81,6 +85,13 @@ Cypress.Commands.add('insertOTP', ()=>{
     })
 })
 
+Cypress.Commands.add('login', (username, password)=>{
+    cy.clickAnyElement(home.homePageLoginButton);
+    cy.typeAnyText(login.userEmailField,username);
+    cy.typeAnyText(login.userPasswordField,password);
+    cy.clickAnyElement(login.loginPageLoginButton);
+    cy.get(dashboardPage.welcomeMsgLabel).should('contain.text', 'Welcome back')
+})
 
 
 
