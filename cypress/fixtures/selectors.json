@@ -1,7 +1,14 @@
 {
   "homePage":
   {
-    "homePageSignupButton": ".Header2_header__nav__btn__wRKfY div:nth-child(2) button"
+    "homePageSignupButton": ".Header2_header__nav__btn__wRKfY div:nth-child(2) button",
+    "homePageLoginButton": ".hgdAmX.sc-imWYAI"
+  },
+
+  "loginDetails":{
+    "userEmailField":"input#email",
+    "userPasswordField": "input#password",
+    "loginPageLoginButton": ".fDRXF.sc-imWYAI"
   },
 
   "personalDetails": {
@@ -25,6 +32,10 @@
 
   "otpPage":{
     "thankYouHeader": "h2[class='Onboarding_left__h2__w+P+z']"
+  },
+
+  "dashboardDetails":{
+    "welcomeMsgLabel":".AppPage_topside_welcome__13qU2"
   }
 
 }

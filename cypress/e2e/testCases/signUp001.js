@@ -2,10 +2,10 @@ import 'cypress-fill-command'
 import {faker} from '@faker-js/faker'
 import 'cypress-file-upload'
 import 'cypress-mailslurp'
-let home
-describe ("", ()=>{
+
+describe ("Verification of signup scenarios", ()=>{
     
-    it ("User Signup", ()=>{
+    it ("Verify that a user is able to signup having filled all mandatory and optional fields", ()=>{
         cy.clickHomePageSignupButton();
         cy.fillPersonalDetails();
         cy.fillSocialDetailsAndSignUp();
