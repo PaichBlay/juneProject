@@ -1,3 +1,46 @@
+
+Cypress.Commands.add('clickAnyElement', (element) => {
+    cy.get(element).should('exist').click()
+})
+
+Cypress.Commands.add('typeAnyText', (element,text)=>{
+    cy.get(element).fill(text);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

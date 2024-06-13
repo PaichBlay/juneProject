@@ -1,10 +1,10 @@
 {
-  "homepage":
+  "homePage":
   {
     "homePageSignupButton": ".Header2_header__nav__btn__wRKfY div:nth-child(2) button"
   },
 
-  "personaDetails": {
+  "personalDetails": {
   "fullNameField": "input#fullname",
   "businessNameField": "input#businessname",
   "businessNameEmail": "input#businessemail",
@@ -18,10 +18,13 @@
     "instagramHandleField":"input#instagramHandle",
     "twitterHandleField":"input#twitterHandle",
     "howYouHeardCombo":".iafYdr.sc-cPiKLX",
-    "howYouHeardSearch":"#scrollableDiv input[placeholder='Search list']",
     "howYouHeardSelected":".MimaDropdown_select__options__xLi7K",
     "passwordField":"input#password",
     "signupPageButton":".Login_rightside__nhkW7 button[type='submit']"
+  },
+
+  "otpPage":{
+    "thankYouHeader": "h2[class='Onboarding_left__h2__w+P+z']"
   }
 
 }
