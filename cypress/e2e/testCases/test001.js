@@ -9,7 +9,8 @@ describe ("", ()=>{
         cy.clickHomePageSignupButton();
         cy.fillPersonalDetails();
         cy.fillSocialDetailsAndSignUp();
-
+        cy.verifyOTPPage();
+        cy.insertOTP();
        
     })
 
