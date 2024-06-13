@@ -20,7 +20,7 @@ import './command/common_actions'
 import 'cypress-fill-command'
 import 'cypress-mailslurp'
 
-before(()=>{
+beforeEach(()=>{
     Cypress.on('uncaught:exception', ()=>{
         return false
     })
