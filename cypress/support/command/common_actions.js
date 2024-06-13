@@ -61,6 +61,27 @@ Cypress.Commands.add('insertEmail', ()=>{
 })
 
 
+Cypress.Commands.add('verifyOTPPage', ()=>{
+    cy.get(otpPage.thankYouHeader).should('be.visible').and('have.text', 'Thank you for Signing up with Mima.')
+})
+
+
+Cypress.Commands.add('insertOTP', ()=>{
+    cy.mailslurp().then(emailExtractor => emailExtractor.waitForLatestEmail(inboxId, 30000, true)).then(email =>{ //check unread emails and return within 30 seconds
+        const emailBody = email.body
+        const docParser = new DOMParser()
+        const document = docParser.parseFromString(emailBody, "text/html")
+        const otpCode = document.querySelector('tr:nth-child(2) p:nth-child(3)').textContent
+        const otpValue = otpCode.trim()
+
+        cy.get('input').each(($el, index)=>{
+            cy.wrap($el).should('exist').fill(otpValue[index])
+        })
+        cy.log(otpValue)
+    })
+})
+
+
 
 
 
