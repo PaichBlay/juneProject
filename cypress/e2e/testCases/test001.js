@@ -5,7 +5,7 @@ import 'cypress-mailslurp'
 let home
 describe ("", ()=>{
     
-    it ("", ()=>{
+    it ("User Signup", ()=>{
         cy.clickHomePageSignupButton();
         cy.fillPersonalDetails();
         cy.fillSocialDetailsAndSignUp();
