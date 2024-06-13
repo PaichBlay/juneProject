@@ -1,9 +1,10 @@
 import {faker} from '@faker-js/faker'
+import 'cypress-mailslurp'
 let home
 let personal
 let social
 let otpPage
-
+let inboxId
 
 before('load all element locators', ()=>{
     cy.fixture('selectors').then((ele)=>{
@@ -23,7 +24,9 @@ Cypress.Commands.add('clickHomePageSignupButton', ()=>{
 Cypress.Commands.add('fillPersonalDetails',()=>{
     cy.typeAnyText(personal.fullNameField, faker.person.fullName());
     cy.typeAnyText(personal.businessNameField, faker.company.buzzNoun());
-    cy.typeAnyText(personal.businessNameEmail, faker.internet.userName() + '@paich.com');
+    //cy.typeAnyText(personal.businessNameEmail, faker.internet.email({provider:'paich.com'}));
+    cy.insertEmail();
+    cy.pause();
     cy.typeAnyText(personal.phoneField, faker.phone.number('+4474########'));
     cy.typeAnyText(personal.businessRegField, 'GBC - 2');
     cy.clickAnyElement(personal.nextButton);
@@ -37,9 +40,25 @@ Cypress.Commands.add('fillSocialDetailsAndSignUp', ()=>{
     cy.typeAnyText(social.howYouHeardCombo, 'Instagram');
     cy.contains(social.howYouHeardSelected, 'Instagram').click();
     cy.typeAnyText(social.passwordField, 'Pa$$w0rd!');
-    cy.clickAnyElement(social.signupPageButton)
+     cy.clickAnyElement(social.signupPageButton)
 })
 
+
+Cypress.Commands.add('insertEmail', ()=>{
+    cy.mailslurp().then(emailCreator => emailCreator.createInbox().then(inbox =>{
+        inboxId = inbox.id
+        const emailAddress = inbox.emailAddress
+        cy.typeAnyText(personal.businessNameEmail, emailAddress)
+
+        const loginDetails = `
+                {
+                    "email": "${emailAddress}",
+                    "password": "Pa$$w0rd!"
+                }
+        `
+        cy.writeFile('cypress/fixtures/login-details.json', loginDetails)
+    }))
+})
 
 
 
