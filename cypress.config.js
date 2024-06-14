@@ -9,6 +9,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     watchForFileChanges: false,
     specPattern: 'cypress/e2e/testCases/*.js',
+    projectId: "awkxd6",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
