@@ -9,3 +9,8 @@ cypress/reports/
 cypress.env.json
 dist/
 
+#browserstack files
+log/
+tmpBstackPackages/
+npm_install_debug.log
+
