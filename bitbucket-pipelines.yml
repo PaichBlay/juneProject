@@ -1,0 +1,14 @@
+image:
+  name: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+
+pipelines:
+  default:
+    - step:
+        name: Run Tests
+        caches:
+          - npm
+        script:
+          - npm install --cache .npm
+
+          # Run tests
+          - npx cypress run --record --browser chrome --env browserstack_username=$BROWSERSTACK_USERNAME --env browserstack_access_key=$BROWSERSTACK_ACCESS_KEY
