@@ -3,13 +3,25 @@ stages:
   - run-test
   - trigger-test
 
+variables:
+  CYPRESS_RECORD_KEY: $CYPRESS_RECORD_KEY
+  BROWSERSTACK_USERNAME: $BROWSERSTACK_USERNAME
+  BROWSERSTACK_ACCESS_KEY: $BROWSERSTACK_ACCESS_KEY
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - .npm/
+
 build:
   # Uses official Cypress docker image for dependencies
   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
   stage: run-test
   
   script:
-    - npm i
+    - npm i --cache .npm
 
     #run tests
-    - npx cypress run --record --browser chrome
+    - npx cypress run --record --browser chrome --env browserstack_username=$BROWSERSTACK_USERNAME browserstack_access_key=$BROWSERSTACK_ACCESS_KEY
