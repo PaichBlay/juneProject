@@ -93,8 +93,18 @@ Cypress.Commands.add('login', (username, password)=>{
     cy.get(dashboardPage.welcomeMsgLabel).should('contain.text', 'Welcome back')
 })
 
+Cypress.Commands.add('verifyTextfieldContent',(element,text)=>{
+    cy.get(element).fill(text).should('have.value', text);
+})
 
 
+Cypress.Commands.add('checkErrorMessgae',(element,errorMessage)=>{
+    cy.get(element).should('have.text', errorMessage);
+})
+
+Cypress.Commands.add('NavigateBack',(element)=>{
+    cy.get(personal.back).click({force: true});
+})
 
 
 

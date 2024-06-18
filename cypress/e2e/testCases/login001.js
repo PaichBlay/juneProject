@@ -30,3 +30,22 @@ describe('Login Scenarios', ()=>{
     })
 
 })
+Given(/^User has navigated to the trymima page$/, () => {
+	return true;
+});
+
+When(/^User clicks the login button$/, () => {
+	return true;
+});
+
+When(/^User provides username$/, () => {
+	return true;
+});
+
+When(/^User provides password$/, () => {
+	return true;
+});
+
+Then(/^User is should be able to login successfullly$/, () => {
+	return true;
+});

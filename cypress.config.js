@@ -18,7 +18,7 @@ module.exports = defineConfig({
     viewportWidth: 1520,
     chromeWebSecurity: false,
     watchForFileChanges: false,
-    specPattern: ['cypress/e2e/testCases/**/*.{js,ts,feature}'],
+    specPattern: ['cypress/e2e/testCases/**/*.feature', '**/*.{ts,jsz,ts,tsx}'],
     projectId: "awkxd6",
     setupNodeEvents,
   },
