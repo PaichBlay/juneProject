@@ -17,7 +17,13 @@
   "businessNameEmail": "input#businessemail",
   "phoneField": "input#businessphonenumber",
   "businessRegField": "input#businessRegNum",
-  "nextButton": ".Login_rightside__nhkW7 div:nth-child(6) button"
+  "nextButton": ".Login_rightside__nhkW7 div:nth-child(6) button",
+  "fullnameError": "div:nth-of-type(1) > .MimaInput_error__QkKJM",
+  "businessNameFieldError": "div:nth-of-type(2) > .MimaInput_error__QkKJM",
+  "emailFieldError": "div:nth-of-type(3) > .MimaInput_error__QkKJM",
+  "phoneFieldError":"div:nth-of-type(4) > .MimaInput_error__QkKJM",
+  "businessRegFieldError":"div:nth-of-type(5) > .MimaInput_error__QkKJM",
+  "back":".Login_rightside__back__W5kq5 > svg > path"
   },
 
   "socialDetails":{

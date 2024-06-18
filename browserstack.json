@@ -49,3 +49,6 @@
     },
     "disable_usage_reporting": false
 }
+When(/^user completes social details$/, () => {
+	return true;
+});
