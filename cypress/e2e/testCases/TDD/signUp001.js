@@ -11,7 +11,6 @@ describe ("Verification of signup scenarios", ()=>{
         cy.fillSocialDetailsAndSignUp();
         cy.verifyOTPPage();
         cy.insertOTP();
-       
     })
 
 })

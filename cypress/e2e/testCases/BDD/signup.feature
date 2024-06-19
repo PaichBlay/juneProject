@@ -6,13 +6,10 @@ Feature: Signup Journey -  Mima Web application
     Scenario: Verify that user is able to sign up having filled all fields (mandatory and optional)
         Given User has navigated to the trymima page
         When User clicks the signup button
-        And User provides full name
-        And User provides business name
-        And User provides business email
-        And User provides phone number
-        And User provides business registration number
-        And User clicks the next button
-        Then User is presented with social details to complete
+        And User completes all personal details
+        And user completes social details
+        Then User should be able to receive and verify OTP
+        And User should be able to complete the signup process
 
 
     
@@ -39,4 +36,4 @@ Feature: Signup Journey -  Mima Web application
         And User provides business registration number
         And User clicks the next button
         And user completes social details
-        Then User should not be able to navigate to the next page
+        Then User should not be able to navigate to the next page.

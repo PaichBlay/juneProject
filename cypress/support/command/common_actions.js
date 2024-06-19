@@ -30,7 +30,6 @@ Cypress.Commands.add('fillPersonalDetails',()=>{
     cy.typeAnyText(personal.businessNameField, faker.company.buzzNoun());
     //cy.typeAnyText(personal.businessNameEmail, faker.internet.email({provider:'paich.com'}));
     cy.insertEmail();
-    cy.pause();
     cy.typeAnyText(personal.phoneField, faker.phone.number('+4474########'));
     cy.typeAnyText(personal.businessRegField, 'GBC - 2');
     cy.clickAnyElement(personal.nextButton);

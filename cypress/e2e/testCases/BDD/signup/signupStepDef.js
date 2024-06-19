@@ -26,13 +26,12 @@ Given(/^User has navigated to the trymima page$/, () => {
 });
 
 When(/^User clicks the signup button$/, () => {
-	cy.clickAnyElement(home.homePageSignupButton)
+    cy.clickHomePageSignupButton();
     
 });
 
 When(/^User provides full name$/, () => {
 	cy.typeAnyText(personal.fullNameField, faker.person.fullName())
-    cy.log(faker.person.fullName())
 });
 
 When(/^User provides business name$/, () => {
@@ -56,10 +55,6 @@ When(/^User clicks the next button$/, () => {
 	cy.clickAnyElement(personal.nextButton)
 });
 
-Then(/^User is presented with social details to complete$/, () => {
-	cy.fillSocialDetailsAndSignUp();
-});
-
 
 When(/^User leaves full name blank$/, () => {
 	cy.verifyTextfieldContent(personal.fullNameField,'');
@@ -74,6 +69,25 @@ Then(/^User should not be able to navigate to the next page$/, () => {
 	cy.checkErrorMessgae(personal.fullnameError,'Full Name is required');
 });
 
+Then(/^User should not be able to navigate to the next page.$/, () => {
+    cy.NavigateBack(personal.back);
+	cy.checkErrorMessgae(personal.businessNameFieldError,'Business name is required');
+});
+
 When(/^User leaves business name blank$/, () => {
 	cy.verifyTextfieldContent(personal.businessNameField,'');
+});
+
+
+When(/^User completes all personal details$/, () => {
+	cy.fillPersonalDetails();
+});
+
+
+Then(/^User should be able to receive and verify OTP$/, () => {
+	cy.verifyOTPPage();
+});
+
+Then(/^User should be able to complete the signup process$/, () => {
+	cy.insertOTP();
 });
